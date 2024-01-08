@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Home() {
     return (
         <div className="flex flex-col justify-center">
-            <nav className="fixed top-0 start-0 backdrop-blur-lg px-20 w-full mx-auto flex flex-wrap justify-between items-center z-20 py-6">
+            <nav className="lg:fixed lg:top-0 lg:start-0 lg:px-20 lg:w-full mx-auto flex lg:flex-row flex-col space-y-4 justify-between items-center lg:items-center lg:z-20 lg:py-6 py-4">
                 <Link href="#">
                     <div className="flex items-end space-x-2">
                         <Image
@@ -16,47 +16,47 @@ export default function Home() {
                         <h1 className="font-extrabold  text-2xl">Affluent</h1>
                     </div>
                 </Link>
-                <div className="flex border  text-sm border-slate-300 rounded-full">
+                <div className="flex  bg-white shadow-lg text-sm rounded-full">
                     <Link
                         href="#hero"
-                        className="hover:cursor-pointer hover:bg-slate-300 px-4 py-2 rounded-full"
+                        className="hover:cursor-pointer hover:bg-slate-300 px-4 py-2 rounded-full active:bg-slate-400"
                     >
                         Why Affluent?
                     </Link>
                     <Link
                         href="#features"
-                        className="hover:cursor-pointer hover:bg-slate-300 px-4 py-2 rounded-full"
+                        className="hover:cursor-pointer hover:bg-slate-300 px-4 py-2 rounded-full active:bg-slate-400"
                     >
                         Features
                     </Link>
                     <Link
                         href="#pricing"
-                        className="hover:cursor-pointer hover:bg-slate-300 px-4 py-2 rounded-full"
+                        className="hover:cursor-pointer hover:bg-slate-300 px-4 py-2 rounded-full active:bg-slate-400"
                     >
                         Pricing
                     </Link>
                 </div>
                 <div className="flex space-x-2 items-center">
                     <button className="text-sm">Login</button>
-                    <button className="px-2 py-1 text-sm rounded-md bg-lime-500 text-white transition duration-200 ease-in-out hover:scale-105 hover:shadow-lg">
+                    <button className="px-2 py-1 lg:px-4 lg:py-2 text-sm font-semibold rounded-md bg-lime-500 active:bg-lime-700 text-white transition duration-200 ease-in-out hover:scale-105 hover:shadow-lg">
                         Start Free Trial
                     </button>
                 </div>
             </nav>
-            <main className="flex flex-col max-w-5xl mx-auto">
+            <main className="flex flex-col lg:max-w-5xl lg:mx-auto px-5 lg:px-0">
                 <section
                     id="hero"
-                    className="flex flex-col justify-center h-screen"
+                    className="flex flex-col lg:justify-center lg:h-screen pt-5 lg:pt-0"
                 >
-                    <div className="lg:relative overflow-hidden">
+                    <div className="lg:relative lg:overflow-hidden space-y-5 lg:space-y-0">
                         <Image
                             src="/landing-images/hero1.jpg"
-                            width={800}
-                            height={100}
+                            width={1024}
+                            height={720}
                             alt="Hero Image"
                             className="w-full rounded-xl"
                         />
-                        <div className="lg:absolute lg:bottom-0 lg:left-0 lg:mx-5 lg:mb-5 space-y-2 p-5 rounded-xl bg-slate-700">
+                        <div className="lg:absolute lg:bottom-5 lg:left-0 lg:mx-5 lg:mb-5 space-y-2 p-5 rounded-xl bg-slate-700">
                             <h2 className="font-extrabold text-white text-3xl drop-shadow-lg">
                                 Want a Personal Finance Guide?
                             </h2>
@@ -67,7 +67,7 @@ export default function Home() {
                                 natus, voluptate eligendi incidunt, eos quos.
                                 Praesentium facere repudiandae rem inventore.
                             </p>
-                            <button className="px-4 py-2 text-lg font-bold rounded-md bg-lime-500 text-white transition duration-200 ease-in-out hover:scale-105 hover:shadow-lg  ">
+                            <button className="px-4 py-2 text-lg font-bold rounded-md bg-lime-500 text-white transition duration-200 ease-in-out hover:scale-105 hover:shadow-lg active:bg-lime-700 ">
                                 Start Free Trial
                             </button>
                         </div>
@@ -75,19 +75,19 @@ export default function Home() {
                 </section>
                 <section
                     id="features"
-                    className="flex flex-col justify-center h-screen"
+                    className="flex flex-col lg:justify-center lg:h-screen pt-5 lg:pt-0"
                 >
                     <div className="flex flex-col space-y-5 ">
                         <h1 className="font-bold text-3xl">Features</h1>
-                        <div className="flex space-x-4">
+                        <div className="flex flex-col lg:flex-row lg:space-x-4">
                             <Image
                                 src="/landing-images/feat1.jpg"
                                 height={300}
                                 width={300}
                                 alt="Featyre 1"
-                                className="rounded-lg"
+                                className="rounded-lg w-full"
                             />
-                            <div className="flex flex-col justify-center space-y-4">
+                            <div className="flex flex-col justify-center space-y-2 lg:space-y-4 mt-2 lg:mt-0">
                                 <h3 className="font-medium text-xl">
                                     Increase your Savings
                                 </h3>
@@ -107,15 +107,15 @@ export default function Home() {
                                 </Link>
                             </div>
                         </div>
-                        <div className="flex space-x-4 flex-row-reverse group">
+                        <div className="flex flex-col lg:space-x-4 lg:flex-row-reverse">
                             <Image
                                 src="/landing-images/feat2.jpg"
                                 height={300}
                                 width={300}
                                 alt="Featyre 1"
-                                className="rounded-lg"
+                                className="rounded-lg w-full"
                             />
-                            <div className="flex flex-col justify-center space-y-4">
+                            <div className="flex flex-col justify-center space-y-2 lg:space-y-4 mt-2 lg:mt-0">
                                 <h3 className="font-medium text-xl">
                                     Personal Assistance
                                 </h3>
@@ -135,15 +135,15 @@ export default function Home() {
                                 </Link>
                             </div>
                         </div>
-                        <div className="flex space-x-4">
+                        <div className="flex flex-col lg:flex-row lg:space-x-4">
                             <Image
                                 src="/landing-images/feat3.jpg"
                                 height={300}
                                 width={300}
                                 alt="Featyre 1"
-                                className="rounded-lg"
+                                className="rounded-lg w-full"
                             />
-                            <div className="flex flex-col justify-center space-y-4">
+                            <div className="flex flex-col justify-center space-y-2 lg:space-y-4 mt-2 lg:mt-0">
                                 <h3 className="font-medium text-xl">
                                     DIY - Do it Yourself
                                 </h3>
@@ -167,10 +167,10 @@ export default function Home() {
                 </section>
                 <section
                     id="pricing"
-                    className="flex flex-col space-y-5 justify-center h-screen"
+                    className="flex flex-col space-y-5 lg:justify-center lg:h-screen pt-5 lg:pt-0"
                 >
                     <h1 className="font-bold text-3xl">Pricing</h1>
-                    <div className="flex space-x-5">
+                    <div className="flex flex-col lg:flex-row lg:space-x-5 space-y-2 lg:space-y-0">
                         <div className="bg-black p-5 text-white rounded-lg">
                             <h2 className="font-bold text-3xl">Bronze</h2>
                             <h3 className="font-medium text-lg">
@@ -246,7 +246,7 @@ export default function Home() {
                     </div>
                 </section>
             </main>
-            <footer className="text-sm px-20 py-5 text-slate-700">
+            <footer className="text-sm px-5 lg:px-20 py-5 text-slate-700">
                 Affluent &copy; {new Date().getFullYear()} | Developed by{" "}
                 <Link
                     href="https://pratikstemkar.in"

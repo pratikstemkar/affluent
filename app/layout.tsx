@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Affluent | Personal Finance for Dummies",
+    title: "Affluent - Personal Finance for Dummies",
     description:
         "Manage your money in a smart way and create wealth for the future.",
 };
