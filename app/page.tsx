@@ -1,113 +1,269 @@
-import Image from 'next/image'
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    return (
+        <div className="flex flex-col justify-center">
+            <nav className="fixed top-0 start-0 backdrop-blur-lg px-20 w-full mx-auto flex flex-wrap justify-between items-center z-20 py-6">
+                <Link href="#">
+                    <div className="flex items-end space-x-2">
+                        <Image
+                            src="/money-bag.png"
+                            width={40}
+                            height={25}
+                            alt="Affluent Logo"
+                        />
+                        <h1 className="font-extrabold  text-2xl">Affluent</h1>
+                    </div>
+                </Link>
+                <div className="flex border  text-sm border-slate-300 rounded-full">
+                    <Link
+                        href="#hero"
+                        className="hover:cursor-pointer hover:bg-slate-300 px-4 py-2 rounded-full"
+                    >
+                        Why Affluent?
+                    </Link>
+                    <Link
+                        href="#features"
+                        className="hover:cursor-pointer hover:bg-slate-300 px-4 py-2 rounded-full"
+                    >
+                        Features
+                    </Link>
+                    <Link
+                        href="#pricing"
+                        className="hover:cursor-pointer hover:bg-slate-300 px-4 py-2 rounded-full"
+                    >
+                        Pricing
+                    </Link>
+                </div>
+                <div className="flex space-x-2 items-center">
+                    <button className="text-sm">Login</button>
+                    <button className="px-2 py-1 text-sm rounded-md bg-lime-500 text-white transition duration-200 ease-in-out hover:scale-105 hover:shadow-lg">
+                        Start Free Trial
+                    </button>
+                </div>
+            </nav>
+            <main className="flex flex-col max-w-5xl mx-auto">
+                <section
+                    id="hero"
+                    className="flex flex-col justify-center h-screen"
+                >
+                    <div className="lg:relative overflow-hidden">
+                        <Image
+                            src="/landing-images/hero1.jpg"
+                            width={800}
+                            height={100}
+                            alt="Hero Image"
+                            className="w-full rounded-xl"
+                        />
+                        <div className="lg:absolute lg:bottom-0 lg:left-0 lg:mx-5 lg:mb-5 space-y-2 p-5 rounded-xl bg-slate-700">
+                            <h2 className="font-extrabold text-white text-3xl drop-shadow-lg">
+                                Want a Personal Finance Guide?
+                            </h2>
+                            <p className="text-slate-200 text-sm">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Assumenda sit autem iste a
+                                neque tenetur atque, inventore aperiam quidem
+                                natus, voluptate eligendi incidunt, eos quos.
+                                Praesentium facere repudiandae rem inventore.
+                            </p>
+                            <button className="px-4 py-2 text-lg font-bold rounded-md bg-lime-500 text-white transition duration-200 ease-in-out hover:scale-105 hover:shadow-lg  ">
+                                Start Free Trial
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <section
+                    id="features"
+                    className="flex flex-col justify-center h-screen"
+                >
+                    <div className="flex flex-col space-y-5 ">
+                        <h1 className="font-bold text-3xl">Features</h1>
+                        <div className="flex space-x-4">
+                            <Image
+                                src="/landing-images/feat1.jpg"
+                                height={300}
+                                width={300}
+                                alt="Featyre 1"
+                                className="rounded-lg"
+                            />
+                            <div className="flex flex-col justify-center space-y-4">
+                                <h3 className="font-medium text-xl">
+                                    Increase your Savings
+                                </h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Perspiciatis optio placeat
+                                    tempore suscipit voluptatem beatae, rem
+                                    quasi amet ipsum eos delectus eum expedita
+                                    voluptatibus animi dolore totam dolores odit
+                                    sapiente.
+                                </p>
+                                <Link
+                                    href="#"
+                                    className="hover:underline underline-offset-4"
+                                >
+                                    Read More
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="flex space-x-4 flex-row-reverse group">
+                            <Image
+                                src="/landing-images/feat2.jpg"
+                                height={300}
+                                width={300}
+                                alt="Featyre 1"
+                                className="rounded-lg"
+                            />
+                            <div className="flex flex-col justify-center space-y-4">
+                                <h3 className="font-medium text-xl">
+                                    Personal Assistance
+                                </h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Perspiciatis optio placeat
+                                    tempore suscipit voluptatem beatae, rem
+                                    quasi amet ipsum eos delectus eum expedita
+                                    voluptatibus animi dolore totam dolores odit
+                                    sapiente.
+                                </p>
+                                <Link
+                                    href="#"
+                                    className="hover:underline underline-offset-4"
+                                >
+                                    Read More
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="flex space-x-4">
+                            <Image
+                                src="/landing-images/feat3.jpg"
+                                height={300}
+                                width={300}
+                                alt="Featyre 1"
+                                className="rounded-lg"
+                            />
+                            <div className="flex flex-col justify-center space-y-4">
+                                <h3 className="font-medium text-xl">
+                                    DIY - Do it Yourself
+                                </h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Perspiciatis optio placeat
+                                    tempore suscipit voluptatem beatae, rem
+                                    quasi amet ipsum eos delectus eum expedita
+                                    voluptatibus animi dolore totam dolores odit
+                                    sapiente.
+                                </p>
+                                <Link
+                                    href="#"
+                                    className="hover:underline underline-offset-4"
+                                >
+                                    Read More
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section
+                    id="pricing"
+                    className="flex flex-col space-y-5 justify-center h-screen"
+                >
+                    <h1 className="font-bold text-3xl">Pricing</h1>
+                    <div className="flex space-x-5">
+                        <div className="bg-black p-5 text-white rounded-lg">
+                            <h2 className="font-bold text-3xl">Bronze</h2>
+                            <h3 className="font-medium text-lg">
+                                Some feaetures available
+                            </h3>
+                            <p className="text-md mt-2">
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Asperiores amet eius quo iure
+                                officiis. Recusandae tempora quo laudantium
+                                reprehenderit veniam, voluptatum totam et fugit
+                                debitis, veritatis earum quas numquam unde.
+                            </p>
+                            <p className="text-md mt-1">
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Asperiores amet eius quo iure
+                                officiis. Recusandae tempora quo laudantium
+                                reprehenderit veniam, voluptatum totam et fugit
+                                debitis, veritatis earum quas numquam unde.
+                            </p>
+                            <h4 className="text-5xl font-bold mt-2">Free</h4>
+                            <button className="px-4 py-2 bg-white text-black text-lg font-bold mt-5 rounded-md transition duration-200 ease-in-out hover:scale-105 hover:cursor-pointer">
+                                Select Plan
+                            </button>
+                        </div>
+                        <div className="bg-gray-500 p-5 text-white rounded-lg">
+                            <h2 className="font-bold text-3xl">Silver</h2>
+                            <h3 className="font-medium text-lg">
+                                Some feaetures available
+                            </h3>
+                            <p className="text-md mt-2">
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Asperiores amet eius quo iure
+                                officiis. Recusandae tempora quo laudantium
+                                reprehenderit veniam, voluptatum totam et fugit
+                                debitis, veritatis earum quas numquam unde.
+                            </p>
+                            <p className="text-md mt-1">
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Asperiores amet eius quo iure
+                                officiis. Recusandae tempora quo laudantium
+                                reprehenderit veniam, voluptatum totam et fugit
+                                debitis, veritatis earum quas numquam unde.
+                            </p>
+                            <h4 className="text-5xl font-bold mt-2">₹2000</h4>
+                            <button className="px-4 py-2 bg-white text-black text-lg font-bold mt-5 rounded-md transition duration-200 ease-in-out hover:scale-105 hover:cursor-pointer">
+                                Select Plan
+                            </button>
+                        </div>
+                        <div className="bg-yellow-500 p-5 text-white rounded-lg">
+                            <h2 className="font-bold text-3xl">Gold</h2>
+                            <h3 className="font-medium text-lg">
+                                Some feaetures available
+                            </h3>
+                            <p className="text-md mt-2">
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Asperiores amet eius quo iure
+                                officiis. Recusandae tempora quo laudantium
+                                reprehenderit veniam, voluptatum totam et fugit
+                                debitis, veritatis earum quas numquam unde.
+                            </p>
+                            <p className="text-md mt-1">
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Asperiores amet eius quo iure
+                                officiis. Recusandae tempora quo laudantium
+                                reprehenderit veniam, voluptatum totam et fugit
+                                debitis, veritatis earum quas numquam unde.
+                            </p>
+                            <h4 className="text-5xl font-bold mt-2">₹5000</h4>
+                            <button className="px-4 py-2 bg-white text-black text-lg font-bold mt-5 rounded-md transition duration-200 ease-in-out hover:scale-105 hover:cursor-pointer">
+                                Select Plan
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer className="text-sm px-20 py-5 text-slate-700">
+                Affluent &copy; {new Date().getFullYear()} | Developed by{" "}
+                <Link
+                    href="https://pratikstemkar.in"
+                    className="underline"
+                    target="_blank"
+                >
+                    Pratik
+                </Link>{" "}
+                | Source Code available on{" "}
+                <Link
+                    href="https://github.com/pratikstemkar/affluent"
+                    target="_blank"
+                    className="underline"
+                >
+                    GitHub
+                </Link>
+            </footer>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    );
 }
