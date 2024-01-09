@@ -1,7 +1,14 @@
+"use client";
+
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
+    const { data: session, status } = useSession({
+        required: false,
+    });
+
     return (
         <div className="flex flex-col justify-center">
             <nav className="lg:fixed lg:top-0 lg:start-0 lg:px-20 lg:w-full mx-auto flex lg:flex-row flex-col space-y-4 justify-between items-center lg:items-center lg:z-20 lg:py-6 py-4">
@@ -37,10 +44,35 @@ export default function Home() {
                     </Link>
                 </div>
                 <div className="flex space-x-2 items-center">
-                    <button className="text-sm">Login</button>
-                    <button className="px-2 py-1 lg:px-4 lg:py-2 text-sm font-semibold rounded-md bg-lime-500 active:bg-lime-700 text-white transition duration-200 ease-in-out hover:scale-105 hover:shadow-lg">
-                        Start Free Trial
-                    </button>
+                    {status == "authenticated" ? (
+                        <>
+                            <Link href="/dashboard">
+                                <button className="px-4 py-2 bg-electric-violet-500 text-white rounded-xl">
+                                    Dashboard
+                                </button>
+                            </Link>
+                            <Link href="/api/auth/signout">
+                                <Image
+                                    src={session.user?.image!}
+                                    height={40}
+                                    width={40}
+                                    alt="profile"
+                                    className="rounded-full hover:cursor-pointer hover:shadow-lg"
+                                />
+                            </Link>
+                        </>
+                    ) : (
+                        <>
+                            <Link href="/api/auth/signin">
+                                <button className="text-sm font-semibold px-4 py-2 bg-electric-violet-500 text-white rounded-lg transition duration-200 ease-in-out active:scale-95">
+                                    Login
+                                </button>
+                            </Link>
+                            <button className="px-2 py-1 lg:px-4 lg:py-2 text-sm font-semibold rounded-md bg-lime-500 active:bg-lime-700 text-white transition duration-200 ease-in-out hover:scale-105 hover:shadow-lg">
+                                Start Free Trial
+                            </button>
+                        </>
+                    )}
                 </div>
             </nav>
             <main className="flex flex-col lg:max-w-5xl lg:mx-auto px-5 lg:px-0">

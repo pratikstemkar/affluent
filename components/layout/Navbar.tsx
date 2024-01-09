@@ -1,12 +1,21 @@
+"use client";
+
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
+    const router = useRouter();
+    const { data: session, status } = useSession({
+        required: false,
+    });
+
     return (
         <nav className="flex flex-col justify-between h-screen p-10 w-1/6">
             <div>
                 <Link
-                    href="#"
+                    href="/"
                     className="flex items-end space-x-2 justify-center"
                 >
                     <Image
@@ -19,13 +28,15 @@ const Navbar = () => {
                 </Link>
                 <div className="flex flex-col items-center mt-10">
                     <Image
-                        src="https://github.com/pratikstemkar.png"
+                        src={session?.user?.image!}
                         width={80}
                         height={80}
                         alt="Affluent Logo"
                         className="rounded-full"
                     />
-                    <h4 className="font-semibold mt-2">Pratik Temkar</h4>
+                    <h4 className="font-semibold mt-2">
+                        {session?.user?.name}
+                    </h4>
                 </div>
                 <div className="flex flex-col space-y-2 mt-10">
                     <button className="px-10 py-4 rounded-xl bg-opacity-20 bg-electric-violet-500 text-electric-violet-500 transition duration-200 ease-in-out active:scale-95 active:bg-opacity-40 hover:bg-electric-violet-500 hover:bg-opacity-20">
@@ -40,7 +51,10 @@ const Navbar = () => {
                     <button className="px-10 py-4 rounded-xl bg-opacity-20  text-electric-violet-500 transition duration-200 ease-in-out active:scale-95 active:bg-opacity-40 hover:bg-electric-violet-500 hover:bg-opacity-20">
                         Dashboard
                     </button>
-                    <button className="px-10 py-4 rounded-xl bg-opacity-20 text-red-500 transition duration-200 ease-in-out active:scale-95 active:bg-opacity-40 hover:bg-red-500 hover:bg-opacity-20">
+                    <button
+                        className="px-10 py-4 rounded-xl bg-opacity-20 text-red-500 transition duration-200 ease-in-out active:scale-95 active:bg-opacity-40 hover:bg-red-500 hover:bg-opacity-20"
+                        onClick={() => router.push("/api/auth/signout")}
+                    >
                         Sign Out
                     </button>
                 </div>
